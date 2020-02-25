@@ -14,6 +14,7 @@
         "type": "git",
         "url": "git@github.com:rhinoJS/console.git"
     },
+    "main": "./src/index.js",
     "dependencies": {
         "@rhinojs/support": "^0.1.14",
         "cli-color": "^2.0.0",
