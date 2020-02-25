@@ -1,2 +1,0 @@
-# console
-rhinoJS Console Commands

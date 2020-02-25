@@ -1,0 +1,11 @@
+{
+  "name": "@rhinojs/console",
+  "version": "1.0.1",
+  "license": "MIT",
+  "author": "rhinoJS",
+  "dependencies": {
+    "@rhinojs/support": "^0.1.14",
+    "cli-color": "^2.0.0",
+    "yargs": "^15.1.0"
+  }
+}
