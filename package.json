@@ -1,11 +1,22 @@
 {
-  "name": "@rhinojs/console",
-  "version": "1.0.1",
-  "license": "MIT",
-  "author": "rhinoJS",
-  "dependencies": {
-    "@rhinojs/support": "^0.1.14",
-    "cli-color": "^2.0.0",
-    "yargs": "^15.1.0"
-  }
+    "name": "@rhinojs/console",
+    "version": "0.1.1",
+    "license": "MIT",
+    "author": "Bruno Goncalves",
+    "private": false,
+    "keywords": [
+        "rhinojs",
+        "framework",
+        "console",
+        "commands"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:rhinoJS/console.git"
+    },
+    "dependencies": {
+        "@rhinojs/support": "^0.1.14",
+        "cli-color": "^2.0.0",
+        "yargs": "^15.1.0"
+    }
 }
