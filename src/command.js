@@ -10,6 +10,7 @@ class Command
      */
     constructor(cmd, desc)
     {
+        this.con = null;
         this.cmd = cmd;
         this.desc = desc;
         this.params = {};
@@ -19,16 +20,18 @@ class Command
      * Registrar o comando no gerenciador de comandos.
      * @param {Object} yargs Objeto Yargs para registrar o comando
      */
-    registerClient(yargs)
+    registerClient(con)
     {
+        this.con = con;
+
         const obj = this;
 
         // Registrar
-        yargs.command({
+        con.cli.command({
             command: this.cmd,
             desc: this.desc,
-            handler: (argv) => {
-                obj.handlerCommand(argv);                
+            handler: async (argv) => {
+                await obj.handlerCommand(argv);                
             }
         });
     }
@@ -45,12 +48,15 @@ class Command
      * Controlador da execucao do comando.
      * @param {Object} argv Argumentos passados
      */
-    handlerCommand(argv)
+    async handlerCommand(argv)
     {
         try {
             this.params = argv;
     
-            this.run();
+            await this.run();
+
+            this.con.events.emit('console.end', this.con, this);
+
         } catch (e) {
             this.error(e);
         }

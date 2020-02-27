@@ -9,7 +9,7 @@ class OiCommand extends Command
         super('oi <nome>', 'Diga oi');
     }
 
-    run()
+    async run()
     {
         this.info("Ola info: " + this.argument('nome', '???'));
     }
@@ -18,5 +18,9 @@ class OiCommand extends Command
 const cmd = new Console();
 
 cmd.command(new OiCommand());
+
+cmd.on('console.end', () => {
+    console.log('finalizou');
+})
 
 cmd.run();

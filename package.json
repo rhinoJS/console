@@ -1,6 +1,6 @@
 {
     "name": "@rhinojs/console",
-    "version": "0.1.2",
+    "version": "0.1.20",
     "license": "MIT",
     "author": "Bruno Goncalves",
     "private": false,
@@ -16,8 +16,9 @@
     },
     "main": "./src/index.js",
     "dependencies": {
-        "@rhinojs/support": "^0.1.14",
+        "@rhinojs/support": "^0.1.20",
         "cli-color": "^2.0.0",
+        "events": "^3.1.0",
         "yargs": "^15.1.0"
     }
 }
