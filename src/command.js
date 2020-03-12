@@ -1,5 +1,6 @@
 const clc  = require('cli-color');
 const { Arr } = require('@rhinojs/support');
+const { events } = require('@rhinojs/events');
 
 class Command
 {
@@ -55,7 +56,7 @@ class Command
     
             await this.run();
 
-            this.con.events.emit('console.end', this.con, this);
+            events.emit('terminate');
 
         } catch (e) {
             this.error(e);

@@ -1,14 +1,11 @@
 const yargs   = require('yargs');
 const Command = require('./command');
-const EventEmitter = require('events');
+const { events } = require('@rhinojs/events');
 
 class Console
 {
     constructor()
     {
-        // Eventos
-        this.events = new EventEmitter();
-
         // Yargs
         this.cli = yargs;
         this.cli.help();
@@ -47,7 +44,7 @@ class Console
      * @param {Function} callback Callback do evento
      */
     on(event, callback) {
-        this.events.on(event, callback);
+        events.on(event, callback);
     }
 }
 
