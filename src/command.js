@@ -58,8 +58,10 @@ class Command
 
             events.emit('terminate');
 
+            process.exit(0);
         } catch (e) {
             this.error(e);
+            process.exit(1);
         }
     }
 
